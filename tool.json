@@ -1,0 +1,13 @@
+{
+  "id": "w19",
+  "slug": "live-script-writer",
+  "name": "视频号直播话术生成",
+  "version": "0.1.0",
+  "repo": "campfire-code/live-script-writer",
+  "license": "MIT",
+  "ui": {
+    "layout": "f",
+    "palette": "rose"
+  },
+  "upstream": null
+}
