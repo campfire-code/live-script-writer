@@ -7,6 +7,7 @@ import {
   type Generated, type Piece, type Product,
 } from './core';
 import { writeXlsx } from './xlsx';
+import { ScriptBody, ScriptEmpty } from './Views';
 
 const versionsOf = (p: Params) => clampInt(p.versions, 1, 3, 1);
 
@@ -45,8 +46,10 @@ const tool: GenerateTool = {
   needsLLM: true,
   concurrency: 2,
   generateLabel: '生成话术',
+  Empty: ScriptEmpty,
+  ResultBody: ScriptBody,
   params: [
-    { key: 'name', label: '商品名称', type: 'text', default: '', placeholder: '例如：316 不锈钢保温杯 500ml' },
+    { key: 'name', label: '商品名称', type: 'text', default: '', placeholder: '例如：316 不锈钢保温杯 500 毫升' },
     { key: 'info', label: '商品信息', type: 'textarea', rows: 4, default: '', placeholder: '规格、材质、卖点、适合谁、怎么用。只写真实信息，AI 不会补充你没写的功效和参数' },
     { key: 'price', label: '价格与优惠', type: 'textarea', rows: 2, default: '', placeholder: '例如：直播间 89 元，两个包邮，前 100 单送杯套。不写就不会提具体价格' },
     { key: 'audience', label: '目标人群', type: 'text', default: '', placeholder: '可选，例如：上班族、宝妈、学生' },
