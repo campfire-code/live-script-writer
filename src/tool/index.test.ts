@@ -14,7 +14,7 @@ function fakeCtx(params: Params, llm: Llm, files = new Map<string, Uint8Array>()
     params, outputDir: '/out', signal: new AbortController().signal, progress: () => {},
     readFile: async (p) => files.get(p)!, readText: async (p) => new TextDecoder().decode(files.get(p)!),
     writeFile: async (p, d) => void files.set(p, d), writeText: async (p, t) => void files.set(p, new TextEncoder().encode(t)),
-    mkdir: async () => {}, join: async (...parts) => parts.join('/'), llm, sidecar: async () => '',
+    mkdir: async () => {}, join: async (...parts) => parts.join('/'), llm, sidecar: async () => '', ffmpeg: async () => {}, duration: async () => 0,
   };
 }
 // 假的大模型：按提示词里的环节名回复
